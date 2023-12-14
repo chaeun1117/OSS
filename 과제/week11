@@ -1,0 +1,24 @@
+**기준 브랜치에서 hotfix 브랜치 병합**
+$ git merge hotfix
+(fast-forward, 3-way merge)
+
+**무조건 3-way 병합 수행**
+$ git merge --no-ff hoxfix
+
+**fast-forward인 경우에만 병합 진행**
+$ git merge --ff-only hotfix
+
+**현재 브랜치에서 커밋 하나만 생성해서 병합**
+$ git merge --squash hoxfix
+
+**3-way 충돌 발생**
+$ git merge hotfix
+
+**충돌한 파일을 인지하고 파일 수정**
+$ code file
+
+**수정 후 다시 add, commit**
+$ git commit -am 'msg'
+
+**충돌 이후 병합 취소**
+$ git merge --abort
