@@ -1,0 +1,56 @@
+**오픈소스 소프트웨어**
+OSS (open source software) : 누구나 특별한 제한 없이 그 코드를 보고 사용할 수 있는 오픈소스 라이선스를 만족하는 SW
+의미 : 소프트웨어의 소스코드를 자유롭게 읽고, 수정 및 재배포가 가능
+
+**오픈소스 소프트웨어 개발을 지원하는 서버인 깃허브에서의 협업 방식**
+오픈소스 지원 관리 서버 : github, gitlab, bitbucket
+1. 서로 간의 소스코드를 사용, 변경 및 공유할 수 있도록 커뮤니티 프로덕션과 동료 평가에 의존
+2. 개발자들은 보다 혁신적인 소프트웨어 솔루션을 만들기 위해 인사이트, 아이디어 및 코드를 공유
+3. 모든 사용자가 재활용성과 접근성을 향상시키기 위해 이를 수정, 개선 및 재분배할 수 있도록 보장
+4. 대규모 협업의 기본 원칙으로 운용 : 일반 사용자를 위한 보다 지속 가능한 소프트웨어 개발을 구축
+
+**대표적인 오픈소스 소프트웨어**
+파이썬, 사이킷런, 파이토치, 텐서플로, MySql, MongoDB 등
+
+**오픈소스 라이선스 저작권**
+오픈소스 SW 개발자가 만들어 놓은 저작권의 범위에 따라 해당 소프트웨어를 사용
+(위반할 경우, 라이선스 위반 및 저작권 침해로 이에 대한 법적 책임이 따름)
+의무 강도에 따른 분류 : GPL > LGPL > Apache > BSD > MIT
+
+**작업 디렉토리와 스테이징 영역을 숨김(stash)에 저장하고 작업 폴더를 정리**
+$ git stash
+$ git stash -m '메세지'
+$ git stash save
+$ git stash save '메세지'
+
+**최근 또는 지정된 임시저장소 내용을 가져와 반영하고 삭제**
+$ git stash pop
+$ git stash pop stash@{n}
+
+**최근 또는 지정된 임시저장소 내용을 가져와 반영, 작업 디렉토리만 반영, stash 목록은 그대로**
+$ git stash apply
+$ git stash apply stash@{n}
+
+**최근 또는 지정된 임시저장소 내용을 가져와 반영, 작업 디렉토리와 스테이징 영역도 반영, stash 목록은 그대로**
+$ git stash apply --index
+$ git stash apply --index stash@{n}
+
+**임시저장 목록 보기**
+$ git stash list
+
+**커밋 자료와 최신 stash 항목 간의 차이로 표시**
+$ git stash show
+$ git stash show -p
+
+**커밋 자료와 해당 stash 항목 간의 차이로 표시**
+$ git stash show stash@{n}
+$ git stash show stash@{n} -p
+
+**최근 임시저장 내용을 삭제**
+$ git stash drop
+
+**저장된 임시저장 내용을 삭제**
+$ git stash drop stash@{n}
+
+**모든 stash 목록을 제거**
+$ git stash clear
